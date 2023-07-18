@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Travel Chat Bot</title>
+</head>
+<body>
+  <h1>Travel Chat Bot</h1>
+
+  <form action="/chat" method="POST">
+    <input type="text" name="message" placeholder="Enter your message" required>
+    <button type="submit">Send</button>
+  </form>
+
+  <div id="response">
+    <% if (message) { %>
+      <p><%= message %></p>
+    <% } %>
+  </div>
+
+  <div id="question">
+    <% if (question) { %>
+      <h2><%= question %></h2>
+    <% } %>
+  </div>
+</body>
+</html>

@@ -25,7 +25,11 @@ app.use(bodyParser.json());
 app.use('/', routes);
 
 
-
+// Allow requests from a specific origin
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', 'https://giant-seal-beret.cyclic.app/questions');
+  next();
+});
 
 const connectDB = async () => {
   try {
